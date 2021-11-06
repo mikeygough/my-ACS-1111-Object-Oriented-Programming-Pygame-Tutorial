@@ -174,7 +174,7 @@ We need a Strawberry class. A Strawberry starts off the left edge of the screen 
 
 ![challenge-1](../images/03-challenge-1.png)
 
-Use this image fro the Strawberry: 
+Use this image for the Strawberry: 
 
 ![Strawberry](../solutions/strawberry.png)
 
