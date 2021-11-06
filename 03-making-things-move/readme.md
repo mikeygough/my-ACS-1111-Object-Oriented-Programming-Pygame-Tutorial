@@ -174,6 +174,10 @@ We need a Strawberry class. A Strawberry starts off the left edge of the screen 
 
 ![challenge-1](../images/03-challenge-1.png)
 
+Use this image fro the Strawberry: 
+
+![Strawberry](../solutions/strawberry.png)
+
 **Challenge 2**
 
 The Apples and Strawberries are looking good but for the next step, we need them to run in three "lanes". Look at the picture below. Imagine all of the Apples fall down the screen in a vertical lane (in green). The lanes should be evenly spaced. 
