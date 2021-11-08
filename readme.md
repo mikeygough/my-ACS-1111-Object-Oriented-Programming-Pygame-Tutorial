@@ -28,3 +28,14 @@ Here is a screenshot of the final game:
 
 ![screenshot](images/screenshot.gif)
 
+<!-- 
+
+## TODO
+
+- Animated Sprites or Spriteheet
+	- https://stackoverflow.com/questions/14044147/animated-sprite-from-few-images
+	- https://www.simplifiedpython.net/pygame-sprite-animation-tutorial/
+	- https://www.techwithtim.net/tutorials/game-development-with-python/pygame-tutorial/pygame-animation/
+	- https://inventwithpython.com/pyganim/
+
+ -->
