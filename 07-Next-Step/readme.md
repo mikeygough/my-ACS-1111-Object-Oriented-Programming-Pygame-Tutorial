@@ -73,7 +73,11 @@ As it is the game quits when the player is hit by a bomb. Reset the game instead
 
 **Challenge 8**
 
-Our sprites are very static. By cycling through a series of images you can create an animated sprite. Take a look at the images in the folder here. 
+Our sprites are very static. By cycling through a series of images you can create an animated sprite. Take a look at the images in the folder here:
+
+- [bomb](../solutions/example-7/images/bomb)
+- [pink](../solutions/example-7/images/pink)
+- [alien](../solutions/example-7/images/alien)
 
 Your goal is to create a new class that can display a series of images in sequence. Take a clue from these: 
 
