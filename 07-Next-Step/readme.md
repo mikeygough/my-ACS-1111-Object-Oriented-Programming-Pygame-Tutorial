@@ -51,3 +51,34 @@ For each of the classes that make up your game create a separate file.
 
 Create another file for constants. These are variables and values shared by the other modules. Put values in here like `lanes` and `SCREEN_WIDTH` and `SCREEN_HEIGHT`. 
 
+### Stretch Goals
+
+**Challenge 4**
+
+Add some sound. Games need sound. Pygame supports sound. Add some background sound: https://www.pygame.org/docs/ref/music.html
+
+**Challege 5** 
+
+Add some sound effects. We need a sound when the player picks up a fruit. 
+
+https://pythonprogramming.net/adding-sounds-music-pygame/
+
+**Challenge 6**
+
+Currently there is no score keeping. Keep track of a score and display it using: https://www.pygame.org/docs/ref/font.html
+
+**Challenge 7**
+
+As it is the game quits when the player is hit by a bomb. Reset the game instead. All objects should return their strting positions and the score should be reset to 0. Consider player a sound when the game ends. 
+
+**Challenge 8**
+
+Our sprites are very static. By cycling through a series of images you can create an animated sprite. Take a look at the images in the folder here. 
+
+Your goal is to create a new class that can display a series of images in sequence. Take a clue from these: 
+
+- Animated Sprites or Spriteheet
+	- https://inventwithpython.com/pyganim/
+	- https://stackoverflow.com/questions/14044147/animated-sprite-from-few-images
+	- https://www.simplifiedpython.net/pygame-sprite-animation-tutorial/
+	- https://www.techwithtim.net/tutorials/game-development-with-python/pygame-tutorial/pygame-animation/
