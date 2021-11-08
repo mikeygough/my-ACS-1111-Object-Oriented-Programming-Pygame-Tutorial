@@ -1,7 +1,7 @@
 # Example 1
 
 # Import and initialize pygame
-import pygame 
+import pygame
 pygame.init()
 # Configure the screen
 screen = pygame.display.set_mode([500, 500])

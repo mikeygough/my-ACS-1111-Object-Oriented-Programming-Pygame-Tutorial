@@ -23,6 +23,7 @@ The tutorial uses the pygame platform to explore OOP including inheritence, poly
 - [04 Handling Events](04-handling-events)
 - [05 Using Groups](05-Using-Groups)
 - [06 Collisions](06-Collisions)
+- [07 Next Step](07-Next-Step)
 
 Here is a screenshot of the final game: 
 
