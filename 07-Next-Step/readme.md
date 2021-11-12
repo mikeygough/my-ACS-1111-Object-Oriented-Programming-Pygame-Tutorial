@@ -114,3 +114,9 @@ Your goal is to create a new class that can display a series of images in sequen
 	- https://www.techwithtim.net/tutorials/game-development-with-python/pygame-tutorial/pygame-animation/
 
 Note! The term spritehseet refers to a single image containing all of the "frames" of animation usually arranged in a grid. I have spritesheets for the are used here ask me an I'll privcide them. Also, you can find spritesheets searching the web. It's a common technology used for games. 
+
+**Challenge 9**
+
+The game currently allows the player to pick up fruit as long as they doge the bomb. This is pretty easy. To make the game a little more challenging remove fruit that has been hit by the bomb. 
+
+To do this you will need to check for collisions between the bomb and fruit. You can use the group to help with this. Group class has a method that checks for collsions between a sprite and all the members of the group. 
