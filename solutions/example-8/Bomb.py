@@ -2,13 +2,33 @@ import pygame
 from random import randint, choice
 from GameObject import GameObject
 from constants import lanes
-
+from AnimatedObject import AnimatedObject
 # -------------------------------------------
 # Bomb
 
-class Bomb(GameObject):
+
+class Bomb(AnimatedObject):
   def __init__(self):
-    super(Bomb, self).__init__(0, 0, 'images/bomb.png')
+    bomb_anim = [
+        ('images/bomb/bomb-1.png', 20),
+        ('images/bomb/bomb-2.png', 3),
+        ('images/bomb/bomb-3.png', 3),
+        ('images/bomb/bomb-4.png', 3),
+        ('images/bomb/bomb-5.png', 10),
+        ('images/bomb/bomb-4.png', 3),
+        ('images/bomb/bomb-3.png', 3),
+        ('images/bomb/bomb-2.png', 3),
+        ('images/bomb/bomb-1.png', 13),
+        ('images/bomb/bomb-6.png', 5),
+        ('images/bomb/bomb-7.png', 15),
+        ('images/bomb/bomb-6.png', 3),
+        ('images/bomb/bomb-1.png', 3),
+        ('images/bomb/bomb-8.png', 3),
+        ('images/bomb/bomb-9.png', 23),
+        ('images/bomb/bomb-8.png', 3),
+        ('images/bomb/bomb-1.png', 13),
+    ]
+    super(Bomb, self).__init__(0, 0, bomb_anim)
     self.dx = 0
     self.dy = 0
     self.reset()

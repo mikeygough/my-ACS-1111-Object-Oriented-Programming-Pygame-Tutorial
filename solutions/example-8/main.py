@@ -11,23 +11,11 @@ from Player import Player
 from Cloud import Cloud
 from AnimatedObject import AnimatedObject
 from Explosion import Explosion
+from Pop import Pop
 
 pygame.init()
 # Configure the screen
 screen = pygame.display.set_mode([500, 500])
-
-explosion = Explosion(100, 200)
-
-
-# ---------------------------------------
-# AnimatedObject test
-alien_anim = [
-    ('images/alien/alien-1.png', 10),
-    ('images/alien/alien-2.png', 10),
-    ('images/alien/alien-3.png', 10),
-    ('images/alien/alien-1.png', 5)
-]
-alien = AnimatedObject(100, 100, alien_anim)
 
 # ---------------------------------------
 # make instances 
@@ -38,8 +26,6 @@ all_sprites = pygame.sprite.Group()
 fruit_sprites = pygame.sprite.Group()
 # Explosion Group
 explosion_sprites = pygame.sprite.Group()
-
-explosion_sprites.add(explosion)
 
 # Make Clouds
 all_sprites.add(Cloud())
@@ -68,6 +54,16 @@ all_sprites.add(bomb)
 clock = pygame.time.Clock()
 
 
+def make_explosion(x, y):
+  explosion = Explosion(x, y)
+  explosion_sprites.add(explosion)
+
+
+def make_pop(x, y):
+  explosion = Pop(x, y)
+  explosion_sprites.add(explosion)
+
+
 # Create the game loop
 running = True
 while running:
@@ -89,23 +85,32 @@ while running:
 
   # Clear screen
   screen.fill((170, 230, 255))
+
   # Move and render Sprites
   for entity in all_sprites:
     entity.move()
     entity.render(screen)
     if entity != player: 
       pass
+
   # Check Colisions
+  # Fruit Player Collisions
   fruit = pygame.sprite.spritecollideany(player, fruit_sprites)
   if fruit:
+    make_pop(fruit.x, fruit.y)
+    fruit.reset()
+
+  # Fruit bomb collisions
+  fruit = pygame.sprite.spritecollideany(bomb, fruit_sprites)
+  if fruit:
+    make_explosion(fruit.x, fruit.y)
     fruit.reset()
 
   # Check collision player and bomb
   if pygame.sprite.collide_rect(player, bomb):
     running = False
 
-  # Test the alien animation
-  alien.render(screen)
+  # Animate the explosions
   for explosion in explosion_sprites:
     explosion.render(screen)
     if explosion.playing == False: 

@@ -1,15 +1,24 @@
 import pygame
-from random import randint, choice
-from GameObject import GameObject
 from constants import lanes
+from AnimatedObject import AnimatedObject
 
 # -------------------------------------------
 # Player
 
+# ---------------------------------------
+# AnimatedObject test
 
-class Player(GameObject):
+class Player(AnimatedObject):
   def __init__(self):
-    super(Player, self).__init__(0, 0, 'images/player.png')
+    player_anim = [
+        ('images/pink/pink-1.png', 10),
+        ('images/pink/pink-2.png', 10),
+        ('images/pink/pink-3.png', 10),
+        ('images/pink/pink-1.png', 5),
+        ('images/pink/pink-4.png', 5),
+        ('images/pink/pink-5.png', 5)
+    ]
+    super(Player, self).__init__(0, 0, player_anim)
     self.dx = 0
     self.dy = 0
     self.pos_x = 1

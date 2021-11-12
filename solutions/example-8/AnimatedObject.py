@@ -38,12 +38,12 @@ class AnimatedObject(pygame.sprite.Sprite):
     self.index += 1
     if self.index == len(self.images):
       if self.play_mode == 'loop':
-        self.reset()
+        self.reset_index()
       else:
         self.index = len(self.images) - 1
         self.playing = False
 
-  def reset(self):
+  def reset_index(self):
     self.index = 0
 
   def render(self, screen):
