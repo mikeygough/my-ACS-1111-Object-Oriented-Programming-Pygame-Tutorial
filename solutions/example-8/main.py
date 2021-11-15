@@ -12,6 +12,7 @@ from Cloud import Cloud
 from AnimatedObject import AnimatedObject
 from Explosion import Explosion
 from Pop import Pop
+from Fruit import Fruit
 
 pygame.init()
 # Configure the screen
@@ -33,10 +34,12 @@ all_sprites.add(Cloud())
 all_sprites.add(Cloud())
 
 # Make Fruit instances
-apple = Apple()
-strawberry = Strawberry()
-fruit_sprites.add(apple)
-fruit_sprites.add(strawberry)
+for n in range(1, 3):
+  fruit = Fruit()
+  fruit_sprites.add(fruit)
+  all_sprites.add(fruit)
+
+# fruit_sprites.add(fruit)
 
 # make instance of Player
 player = Player()
@@ -46,8 +49,6 @@ bomb = Bomb()
 
 # Add sprites to group
 all_sprites.add(player)
-all_sprites.add(apple)
-all_sprites.add(strawberry)
 all_sprites.add(bomb)
 
 # Get the clock
@@ -97,8 +98,12 @@ while running:
   # Fruit Player Collisions
   fruit = pygame.sprite.spritecollideany(player, fruit_sprites)
   if fruit:
-    make_pop(fruit.x, fruit.y)
-    fruit.reset()
+    if fruit.flavor == "sweet":
+      make_pop(fruit.x, fruit.y)
+      fruit.reset()
+    else: 
+      make_pop(player.x, player.y)
+      player.stun()
 
   # Fruit bomb collisions
   fruit = pygame.sprite.spritecollideany(bomb, fruit_sprites)

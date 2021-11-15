@@ -1,3 +1,4 @@
+from random import randint
 import pygame
 from constants import lanes
 from AnimatedObject import AnimatedObject
@@ -23,6 +24,7 @@ class Player(AnimatedObject):
     self.dy = 0
     self.pos_x = 1
     self.pos_y = 1
+    self.state = 0
     self.reset()
 
   def left(self):
@@ -46,15 +48,22 @@ class Player(AnimatedObject):
     self.update_dx_dy()
 
   def move(self):
-    self.x -= (self.x - self.dx) * 0.25
-    self.y -= (self.y - self.dy) * 0.25
+    if self.state < 1:
+      self.x -= (self.x - self.dx) * 0.25
+      self.y -= (self.y - self.dy) * 0.25
+    else:
+      self.state -= 1
 
   def reset(self):
     self.x = lanes[self.pos_x]
     self.y = lanes[self.pos_y]
     self.dx = self.x
     self.dy = self.y
+    self.state = 0
   
   def update_dx_dy(self):
     self.dx = lanes[self.pos_x]
     self.dy = lanes[self.pos_y]
+
+  def stun(self):
+    self.state = randint(15, 30)
