@@ -187,6 +187,24 @@ If you have the score working a player could lose points when the bomb collides 
 
 **Challenge**
 
+Improve the collisions. You may have noticed that the objects register a collision when they are near but not touching sometimes. This is because Pygame is looking at the rectangles for each sprite. 
+
+See the image. Notice the rectangles over lap but the artwork is not overlapping. 
+
+![Rectangles](images/07-rectangles.png)
+
+Pygame offers another type of collision detection using circles. Try switching your code to that method. 
+
+In this image a circle centered on the art gives a more accurate collision. 
+
+![07-Circles](images/07-Circles.png)
+
+See the pygame docs and read about `sprite.collide_circle`. 
+
+https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.collide_circle
+
+**Challenge**
+
 Create different app "screens". As it is the game has a single screen. When start we see all of the game objects and we are playing the game. 
 
 The goal of this challenge is to display a start message when the game begins and wait here for some user input like a keystroke or mouse click. This input will trigger the game to play. 
