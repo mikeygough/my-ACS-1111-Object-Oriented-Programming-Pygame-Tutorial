@@ -303,3 +303,34 @@ while running:
 **Challenge**
 
 Make up your own challenge! The goal is to make a fun and interesting game! 
+
+**Challenge**
+
+Add some points that appear when a fruit is captured. The number of points should appear at the location of the captured sprite then disappear after a second or two. 
+
+Bonus points for making the number move up the screen and fade away. 
+
+Here's a formula. 
+
+- Make a PointSprite - this should subclass GameObject
+- It should override `self.surf` with the text you want to display.
+- Give your new class a variable to count the number of frames it has been on the screen
+- Increment the count each frame in the move or render method
+- When the timer gets to 30 or 60 remove the sprite.
+
+Initialize the Font module with:
+
+```Python
+pygame.font.init() # you have to call this at the start, 
+                   # if you want to use this module.
+myfont = pygame.font.SysFont('Comic Sans MS', 30)
+```
+
+Make a text surface with: 
+
+```Python
+textsurface = myfont.render('Some Text', False, (0, 0, 0))
+```
+
+When a collision occurs create a new PointSprite. Set it's x and y to the x and y of the collided sprite. Do this before removing that sprite. Add it to the all sprites group. 
+
