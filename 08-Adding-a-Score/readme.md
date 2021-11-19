@@ -202,3 +202,14 @@ For example, imagine we just found a collision with an apple and updated the sco
 
 If you count every frame it should count pretty quickly. If the count seems too slow count in fast increments like 5s or 10s. 
 
+**Super Stretch Challenge**
+
+Add a new PointSprite class. This class will display some points at the point where you scored them and move up and fade out. 
+
+For example: 
+
+![example 2](images/example-2.gif)
+
+The compression on this gif doesn't show the numbers on the first collision with the Strawberry but you can see 100 appear when we hit the apple. 
+
+The idea is to make a script that shows the number of points added. The sprite appears at the location of the collision. The sprite moves up the screen and fades out after it appears. 
