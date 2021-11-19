@@ -13,8 +13,11 @@ from AnimatedObject import AnimatedObject
 from Explosion import Explosion
 from Pop import Pop
 from Fruit import Fruit
+from PointsSprite import PointsSprite
+from ScoreBoard import ScoreBoard
 
 pygame.init()
+pygame.font.init()
 # Configure the screen
 screen = pygame.display.set_mode([500, 500])
 
@@ -51,9 +54,12 @@ bomb = Bomb()
 all_sprites.add(player)
 all_sprites.add(bomb)
 
+# Score
+score = ScoreBoard(30, 30, 0)
+all_sprites.add(score)
+
 # Get the clock
 clock = pygame.time.Clock()
-
 
 def make_explosion(x, y):
   explosion = Explosion(x, y)
@@ -100,10 +106,15 @@ while running:
   if fruit:
     if fruit.flavor == "sweet":
       make_pop(fruit.x, fruit.y)
+      # Make some text
+      points = PointsSprite(fruit.x, fruit.y, 100)
+      score.update(100)
+      all_sprites.add(points)
       fruit.reset()
     else: 
       make_pop(player.x, player.y)
       player.stun()
+      fruit.reset()
 
   # Fruit bomb collisions
   fruit = pygame.sprite.spritecollideany(bomb, fruit_sprites)
