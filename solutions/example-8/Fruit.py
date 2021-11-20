@@ -34,3 +34,4 @@ class Fruit(GameObject):
       self.flavor = "sweet"
     self.x = -64
     self.y = choice(lanes)
+

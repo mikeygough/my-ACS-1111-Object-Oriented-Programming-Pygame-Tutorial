@@ -13,8 +13,7 @@ class Apple(GameObject):
     self.reset()
 
   def move(self):
-    self.x += self.dx
-    self.y += self.dy
+    super.move
     if self.y > 500:
       self.reset()
 
