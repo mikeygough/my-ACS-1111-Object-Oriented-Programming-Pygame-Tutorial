@@ -52,7 +52,6 @@ class Apple(GameObject):
 # ----------------------------------------------
 # Strawberry
 
-
 class Strawberry(GameObject):
   def __init__(self):
     super(Strawberry, self).__init__(0, 0, 'strawberry.png')
@@ -111,7 +110,6 @@ class Bomb(GameObject):
     
 # -------------------------------------------
 # Player
-
 
 class Player(GameObject):
   def __init__(self):
@@ -212,8 +210,7 @@ while running:
   for entity in all_sprites:
     entity.move()
     entity.render(screen)
-    if entity != player: 
-      pass
+    
   # Check Colisions
   fruit = pygame.sprite.spritecollideany(player, fruit_sprites)
   if fruit:

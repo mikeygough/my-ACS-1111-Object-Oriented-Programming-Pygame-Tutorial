@@ -175,4 +175,3 @@ Draw an inheritance tree that shows how `Sprite`, `GameObject`, `Apple`, `Strawb
   - `Bomb`
 
 </details>
-
