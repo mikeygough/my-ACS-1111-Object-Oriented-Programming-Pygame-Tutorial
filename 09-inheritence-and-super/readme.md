@@ -1,4 +1,4 @@
-# Inhgeritence and Super
+# Inheritence and Super
 
 This inheritance stuff is great but maybe it's not that great if you're not using all of the features. 
 
