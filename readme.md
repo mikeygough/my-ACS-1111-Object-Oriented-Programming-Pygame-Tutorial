@@ -40,3 +40,20 @@ Here is a screenshot of the final game:
 	- https://inventwithpython.com/pyganim/
 
  -->
+
+ ### Virtual Environments
+Create Python3 Virtual Environment:
+
+```python3 -m venv env```
+
+Activate Virtual Environment:
+
+```source env/bin/activate```
+
+Deactivate Virtual Environment:
+
+```deactivate```
+
+Remove Virtual Environment:
+
+```sudo em -rf venv```
