@@ -22,7 +22,7 @@ class GameObject(pygame.sprite.Sprite):
         
 class Apple(GameObject):
     def __init__(self):
-        x = randint(50, 400)
+        x = sample([93, 218, 343], 1)[0]
         super(Apple, self).__init__(x, 0, 'apple.png')
         self.dx = 0
         self.dy = (randint(0, 200) / 100) + 1
@@ -41,7 +41,7 @@ class Apple(GameObject):
         
 class Strawberry(GameObject):
     def __init__(self):
-        y = randint(50, 400)
+        y = sample([93, 218, 343], 1)[0]
         super(Strawberry, self).__init__(y, 0, 'strawberry.png')
         self.dy = 0
         self.dx = (randint(0, 200) / 100) + 1
