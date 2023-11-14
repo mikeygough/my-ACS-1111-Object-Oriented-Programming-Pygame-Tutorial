@@ -60,36 +60,37 @@ class Strawberry(GameObject):
         self.y = sample([93, 218, 343], 1)[0]
         self.x = -64
 
-class Player(GameObject):
-    def __init__(self):
-        super().__init__(0, 0, 'player.png')
-        self.dx = 0
-        self.dy = 0
+class Player(GameObject):        
+    def __init__(self, starting_x=93, starting_y=93):    
+        super().__init__(starting_x, starting_y, 'player.png')
+        self.dx = starting_x
+        self.dy = starting_y
+        self.max_x = 343
+        self.min_x = 93
+        self.max_y = 343
+        self.min_y = 93
+        self.move_distance = 125
         self.reset()
         
     def left(self):
-        if (self.x - 100) > 0:
-            self.dx -= 100
-        else:
-            self.dx = 0
+        """ Move the character left without cross barrier """
+        if (self.x > (self.min_x + 15)):
+            self.dx -= self.move_distance        
     
     def right(self):
-        if (self.x + 100) < screen_width - 58:
-            self.dx += 100
-        else:
-            self.dx = screen_width - 58
+        """ Move the character right without cross barrier """
+        if (self.x < (self.max_x - 15)):
+            self.dx += self.move_distance
         
     def up(self):
-        if (self.y - 100) > 0:
-            self.dy -= 100
-        else:
-            self.dy = 0
+        """ Move the character up without cross barrier """
+        if (self.y > (self.min_y + 15)):
+            self.dy -= self.move_distance
     
     def down(self):
-        if (self.y + 100) < screen_height - 64:
-            self.dy += 100
-        else:
-            self.dy = screen_height - 64
+        """ Move the character down without cross barrier """
+        if (self.y < (self.max_y - 15)):
+            self.dy += self.move_distance
     
     def move(self):
         self.x -= (self.x - self.dx) * 0.25
@@ -98,8 +99,8 @@ class Player(GameObject):
     def reset(self):
         """ Move the player to the center of the screen, 
             this is the starting position. """
-        self.x = 250 - 32
-        self.y = 250 - 32
+        self.x = self.min_x
+        self.y = self.min_y
         
 
 # instantiate GameObject
@@ -139,10 +140,8 @@ while running:
     # draw player
     player.render(screen)
     player.move()
-    # print(player.x)
-    # print(player.y)
     
     # update display
     pygame.display.flip()
     # tick the clock
-    clock.tick(60) # next update should be applied in 1/30th of a second
+    clock.tick(120) # next update should be applied in 1/30th of a second
