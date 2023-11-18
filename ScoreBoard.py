@@ -20,7 +20,7 @@ class ScoreBoard(pygame.sprite.Sprite):
         self.y += self.dy
     
     def render(self, screen):
-        self.surf = self.font.render("f{self.show_score}", False, (0, 0, 0))
+        self.surf = self.font.render(f"{self.score}", False, (0, 0, 0))
         screen.blit(self.surf, (self.x, self.y))
     
     def reset(self):
